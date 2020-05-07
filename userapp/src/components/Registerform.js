@@ -43,6 +43,11 @@ genderhandler = (e) => {
            <div> 
                <form>
                <h2> Register here </h2>
+               <label> firstname :</label>
+               <label> lastname :</label>
+               <label> password :</label>
+               <label> gender:</label>
+
                </form> 
            </div>
         )
