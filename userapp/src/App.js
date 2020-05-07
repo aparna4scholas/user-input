@@ -1,4 +1,5 @@
 import React from 'react';
+import Registerform from './components/Registerform.js';
 
 import './App.css';
 
@@ -6,7 +7,7 @@ function App() {
   return (
     <div className="App">
       
-      <h1> welcome </h1>
+      <Registerform />
     </div>
   );
 }
