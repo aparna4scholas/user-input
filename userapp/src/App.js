@@ -1,5 +1,5 @@
 import React from 'react';
-import Registerform from './components/Registerform.js';
+import Registerform from './components/Registerform';
 
 import './App.css';
 

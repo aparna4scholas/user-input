@@ -1,15 +1,18 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+
 
  class Registerform extends Component {
     constructor(props){
         super(props)
         this.state = {
-            firstname: "",
-            lastname: "",
-            password: "",
-            gender: "",
+            firstname: '',
+            lastname: '',
+            password: '',
+            gender: '',
 
         }
+        this.handleSubmit=this.handleSubmit.bind(this)
+        
   }
   firsthandler = (e) => {
       this.state({
@@ -33,24 +36,36 @@ genderhandler = (e) => {
         gender: e.target.value
      } )
 }
+handleSubmit = (e) => {
+    this.state({
+        value: e.target.value
+    })
 
+}
 
-    }
-    
     render()
      {
         return (
            <div> 
-               <form>
-               <h2> Register here </h2>
-               <label> firstname :</label>
-               <label> lastname :</label>
-               <label> password :</label>
-               <label> gender:</label>
+               <form onSubmit={this.handleSubmit}>
+               <h2> SignUp form </h2>
+               <label> Firstname :</label> 
+               <input type='text' value={this.state.firstname} onChange={this.state.firstname} />
+               <label> Lastname :</label> 
+               <input type='text' value={this.state.lastname} onChange={this.state.lastname} />
+               <label> Password :</label> 
+               <input type='text' value={this.state.password} onChange={this.state.password} />
+               <label> Gender:</label>
+               <option defaultValue> Select Gender</option>
+               <option value="male">Male</option>
+               <option value="female">Female</option>
+               <br />
+               <input type="submit" value="Submit" /> 
 
-               </form> 
+            </form> 
            </div>
-        )
+        );
     }
+}
 
 export default Registerform;
