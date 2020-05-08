@@ -7,8 +7,10 @@ import React, { Component } from 'react';
         this.state = {
             firstname: '',
             lastname: '',
+            username:'',
             password: '',
             gender: '',
+            age:'', 
 
         }
         this.handleSubmit=this.handleSubmit.bind(this)
@@ -46,31 +48,42 @@ handleSubmit = (e) => {
     render()
      {
         return (
-           <div> 
                <form onSubmit={this.handleSubmit}>
-               <h2> SignUp form </h2>
+                <div className="form-group">
+               <h2> User Registration Form </h2>
+               </div>
+               <p> please fill all the fields to crete a new acccount</p>
+               <div className="form-group">
                <label> Firstname :</label> 
                <input type='text' className="form-control" placeholder="First Name" value={this.state.firstname} onChange={this.state.firstname} />
+               </div>
                <br />
+               <div className="form-group">
                <label> Lastname :</label> 
-               <input type='text' value={this.state.lastname} onChange={this.state.lastname} />
+               <div className="col-xs-4">
+               <input type='text' className="form-control" value={this.state.lastname} onChange={this.state.lastname} />
+               </div>
+               </div>
                <br />
+               <div className="form-group">
                <label> Password :</label> 
-               <input type='text' value={this.state.password} onChange={this.state.password} />
+               <input type='text' className="form-control" value={this.state.password} onChange={this.state.password} />
+               </div>
                <br />
+               <div className="form-group">
                <label> Gender:</label>
-   
-
                 <select>
                <option defaultValue> Select Gender</option>
                <option value="male">Male</option>
                <option value="female">Female</option>
                </select> 
+                </div>
                 <br />
-               <input type="submit" value="Submit" /> 
-
+                
+               <input type="submit" className="btn btn-primary" value="Submit" /> 
+               
             </form> 
-           </div>
+           
         );
     }
 }
