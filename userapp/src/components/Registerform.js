@@ -50,16 +50,23 @@ handleSubmit = (e) => {
                <form onSubmit={this.handleSubmit}>
                <h2> SignUp form </h2>
                <label> Firstname :</label> 
-               <input type='text' value={this.state.firstname} onChange={this.state.firstname} />
+               <input type='text' className="form-control" placeholder="First Name" value={this.state.firstname} onChange={this.state.firstname} />
+               <br />
                <label> Lastname :</label> 
                <input type='text' value={this.state.lastname} onChange={this.state.lastname} />
+               <br />
                <label> Password :</label> 
                <input type='text' value={this.state.password} onChange={this.state.password} />
+               <br />
                <label> Gender:</label>
+   
+
+                <select>
                <option defaultValue> Select Gender</option>
                <option value="male">Male</option>
                <option value="female">Female</option>
-               <br />
+               </select> 
+                <br />
                <input type="submit" value="Submit" /> 
 
             </form> 
