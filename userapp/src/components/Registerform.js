@@ -5,12 +5,12 @@ import React, { Component } from 'react';
     constructor(props){
         super(props)
         this.state = {
-            firstname: '',
-            lastname: '',
-            username:'',
-            password: '',
-            gender: '',
-            age:'', 
+            firstname: " ",
+            lastname: " ",
+            username:" ",
+            password: ' ',
+            gender: " ",
+            age:" ", 
 
         }
         this.handleSubmit=this.handleSubmit.bind(this)
