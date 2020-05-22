@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Displayform from './Displayform';
 
 
  class Registerform extends Component {
