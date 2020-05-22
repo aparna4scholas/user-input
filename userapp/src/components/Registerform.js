@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Displayform from './Displayform';
 
 
@@ -10,44 +10,33 @@ import Displayform from './Displayform';
             username:" ",
             password: ' ',
             gender: " ",
-            age:" ", 
-
+            age:'', 
+         Displayform:false
+          
         }
+
+        
         this.handleChange = this.handleChange.bind(this);
         this.handleGenderClick = this.handleGenderChange.bind(this);
         this.handleSubmit=this.handleSubmit.bind(this);
         
   }
-  namehandler = (e) => {
-      this.state({
-          name: e.target.value
-      }
-      )
+handleChange(event) {
+this.setState({[event.target.name]: event.target.value});
+console.log(event.target.name,event.target.value);
   }
-  usernamehandler = (e) => {
-    this.state({
-        username: e.target.value
-    }
-    )
-}
-passwordhandler = (e) => {
-    this.state({
-        password: e.target.value
-      })
-}
-genderhandler = (e) => {
-    this.state({
-        gender: e.target.value
-     } )
-}
-handleSubmit = (e) => {
-    this.state({
-        value: e.target.value
-    })
+  handleGenderClick(event){
+    this.setState({gender: event.target.value});   
 
-}
+  }
+  handleSubmit=(e)=> {
+e.preventDefault();
+console.log(this.state);
+this.setState({Displayform:true})
+  }
 
-    render()
+
+   render()
      {
         return (
                <form onSubmit={this.handleSubmit}>
@@ -57,24 +46,29 @@ handleSubmit = (e) => {
                <p> please fill all the fields to crete a new acccount</p>
                <div className="form-group">
                <label> Name :</label> 
-               <input type='text' className="form-control" placeholder=" Name" value={this.state.firstname} onChange={this.state.firstname} />
+               <input type='text' className="form-control" placeholder=" Name" value={this.state.name} onChange={this.handleChange} />
                </div>
                <br />
                <div className="form-group">
                <label> Username :</label> 
                <div className="col-xs-4">
-               <input type='text' className="form-control" value={this.state.lastname} onChange={this.state.lastname} />
+               <input type='text' className="form-control" value={this.state.username} onChange={this.handleChange} />
                </div>
                </div>
                <br />
                <div className="form-group">
                <label> Password :</label> 
-               <input type='text' className="form-control" value={this.state.password} onChange={this.state.password} />
+               <input type='text' className="form-control" value={this.state.password} onChange={this.handleChange} />
+               </div>
+               <br />
+               <div className="form-group">
+               <label> age :</label> 
+               <input type='number' className="form-control" value={this.state.age} onChange={this.handleChange} />
                </div>
                <br />
                <div className="form-group">
                <label> Gender:</label>
-                <select>
+                <select className='options' onClick={this.handleChange}>
                <option defaultValue> Select Gender</option>
                <option value="male">Male</option>
                <option value="female">Female</option>
