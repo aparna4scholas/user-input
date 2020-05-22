@@ -5,26 +5,27 @@ import React, { Component } from 'react';
     constructor(props){
         super(props)
         this.state = {
-            firstname: " ",
-            lastname: " ",
+            name: " ",
             username:" ",
             password: ' ',
             gender: " ",
             age:" ", 
 
         }
-        this.handleSubmit=this.handleSubmit.bind(this)
+        this.handleChange = this.handleChange.bind(this);
+        this.handleGenderClick = this.handleGenderChange.bind(this);
+        this.handleSubmit=this.handleSubmit.bind(this);
         
   }
-  firsthandler = (e) => {
+  namehandler = (e) => {
       this.state({
-          firstname: e.target.value
+          name: e.target.value
       }
       )
   }
-  lasthandler = (e) => {
+  usernamehandler = (e) => {
     this.state({
-        lastname: e.target.value
+        username: e.target.value
     }
     )
 }
@@ -54,12 +55,12 @@ handleSubmit = (e) => {
                </div>
                <p> please fill all the fields to crete a new acccount</p>
                <div className="form-group">
-               <label> Firstname :</label> 
-               <input type='text' className="form-control" placeholder="First Name" value={this.state.firstname} onChange={this.state.firstname} />
+               <label> Name :</label> 
+               <input type='text' className="form-control" placeholder=" Name" value={this.state.firstname} onChange={this.state.firstname} />
                </div>
                <br />
                <div className="form-group">
-               <label> Lastname :</label> 
+               <label> Username :</label> 
                <div className="col-xs-4">
                <input type='text' className="form-control" value={this.state.lastname} onChange={this.state.lastname} />
                </div>
