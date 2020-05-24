@@ -2,84 +2,86 @@ import React, { Component } from 'react'
 import Displayform from './Displayform';
 
 
- class Registerform extends Component {
-    constructor(props){
+class Registerform extends Component {
+    constructor(props) 
+    {
         super(props)
-        this.state = {
-            name: " ",
-            username:" ",
-            password: ' ',
-            gender: " ",
-            age:'', 
-         Displayform:false
-          
+        
+        this.state={
+            name:null,
+            username:null,
+            password:null,
+            gender:null,
+            age:null,
+            form:false
         }
 
-        
+
         this.handleChange = this.handleChange.bind(this);
-        this.handleGenderClick = this.handleGenderChange.bind(this);
-        this.handleSubmit=this.handleSubmit.bind(this);
-        
-  }
-handleChange(event) {
-this.setState({[event.target.name]: event.target.value});
-console.log(event.target.name,event.target.value);
-  }
-  handleGenderClick(event){
-    this.setState({gender: event.target.value});   
+        this.handleGenderClick = this.handleGenderClick.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
 
-  }
-  handleSubmit=(e)=> {
-e.preventDefault();
-console.log(this.state);
-this.setState({Displayform:true})
-  }
+    }
+    handleChange(event) {
+        this.setState({ [event.target.name]: event.target.value });
+        console.log(event.target.name, event.target.value);
+    }
+    handleGenderClick(event) {
+        this.setState({ gender: event.target.value });
+
+    }
+    handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(this.state);
+        this.setState({ form: true })
+    }
 
 
-   render()
-     {
+    render() {
         return (
-               <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit}>
                 <div className="form-group">
-               <h2> User Registration Form </h2>
-               </div>
-               <p> please fill all the fields to crete a new acccount</p>
-               <div className="form-group">
-               <label> Name :</label> 
-               <input type='text' className="form-control" placeholder=" Name" value={this.state.name} onChange={this.handleChange} />
-               </div>
-               <br />
-               <div className="form-group">
-               <label> Username :</label> 
-               <div className="col-xs-4">
-               <input type='text' className="form-control" value={this.state.username} onChange={this.handleChange} />
-               </div>
-               </div>
-               <br />
-               <div className="form-group">
-               <label> Password :</label> 
-               <input type='text' className="form-control" value={this.state.password} onChange={this.handleChange} />
-               </div>
-               <br />
-               <div className="form-group">
-               <label> age :</label> 
-               <input type='number' className="form-control" value={this.state.age} onChange={this.handleChange} />
-               </div>
-               <br />
-               <div className="form-group">
-               <label> Gender:</label>
-                <select className='options' onClick={this.handleChange}>
-               <option defaultValue> Select Gender</option>
-               <option value="male">Male</option>
-               <option value="female">Female</option>
-               </select> 
+                    <h2> User Registration Form </h2>
+                </div>
+                <p> please fill all the fields to crete a new acccount</p>
+                <div className="form-group">
+                    <label> Name :</label>
+                    <input type='text' className="form-control" placeholder=" Name" value={this.state.name} onChange={this.handleChange} />
                 </div>
                 <br />
-                
-               <input type="submit" className="btn btn-primary" value="Submit" /> 
-               
-            </form> 
-           
+                <div className="form-group">
+                    <label> Username :</label>
+                    <div className="col-xs-4">
+                        <input type='text' className="form-control" value={this.state.username} onChange={this.handleChange} />
+                    </div>
+                </div>
+                <br />
+                <div className="form-group">
+                    <label> Password :</label>
+                    <input type='text' className="form-control" value={this.state.password} onChange={this.handleChange} />
+                </div>
+                <br />
+                <div className="form-group">
+                    <label> age :</label>
+                    <input type='number' className="form-control" value={this.state.age} onChange={this.handleChange} />
+                </div>
+                <br />
+                <div className="form-group">
+                    <label> Gender:</label>
+                    <select className='options' onClick={this.handleGenderClick}>
+                        <option defaultValue> </option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <br />
+
+                <input type="submit" className="btn btn-primary" value="Submit" />
+                {this.state.form===true && <Displayform Details={this.state} />}
+
+            </form>
+
+
         );
     }
 }
