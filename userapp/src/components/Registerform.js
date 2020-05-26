@@ -5,7 +5,7 @@ import Displayform from './Displayform';
 class Registerform extends Component {
     constructor(props) 
     {
-        super(props)
+        super(props);
         
         this.state={
             name:null,
@@ -38,6 +38,7 @@ class Registerform extends Component {
 
 
     render() {
+
         return (
             <form onSubmit={this.handleSubmit}>
                 <div className="form-group">
