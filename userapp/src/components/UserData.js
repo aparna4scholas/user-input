@@ -8,11 +8,11 @@ class UserData extends Component {
         super(props);
         
         this.state = {
-            name: 0,
-            username: 0,
-            password: 0,
-            gender: 0,
-            age: 0,
+            name: '',
+            username: '',
+            password: '',
+            gender: '',
+            age: '',
             form:false
         }
 
