@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Registerform from './components/Registerform';
+import UserData from './components/UserData';
 import './App.css';
 
 
@@ -11,7 +11,7 @@ class App extends Component {
   return (
     <div className="App">
       
-      <Registerform />
+      <UserData />
       
     </div>
   );

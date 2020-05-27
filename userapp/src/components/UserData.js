@@ -2,17 +2,17 @@ import React, { Component } from 'react'
 import Displayform from './Displayform';
 
 
-class Registerform extends Component {
+class UserData extends Component {
     constructor(props) 
     {
         super(props);
         
-        this.state={
-            name:null,
-            username:null,
-            password:null,
-            gender:null,
-            age:null,
+        this.state = {
+            name: 0,
+            username: 0,
+            password: 0,
+            gender: 0,
+            age: 0,
             form:false
         }
 
@@ -87,4 +87,4 @@ class Registerform extends Component {
     }
 }
 
-export default Registerform;
+export default UserData;
