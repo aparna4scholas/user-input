@@ -8,15 +8,15 @@ class UserData extends Component {
         super(props);
         
         this.state = {
-            name: '',
-            username: '',
-            password: '',
-            gender: '',
-            age: '',
+            name: null,
+            username: null,
+            password: null,
+            gender: null,
+            age: null,
             form:false
         }
 
-
+    
         this.handleChange = this.handleChange.bind(this);
         this.handleGenderClick = this.handleGenderClick.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
