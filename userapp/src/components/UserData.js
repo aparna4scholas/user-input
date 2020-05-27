@@ -8,11 +8,12 @@ class UserData extends Component {
         super(props);
         
         this.state = {
-            name: null,
-            username: null,
-            password: null,
-            gender: null,
-            age: null,
+            name: '',
+            username: '',
+            password: '',
+            gender: '',
+            age: '',
+           
             form:false
         }
 
@@ -47,32 +48,32 @@ class UserData extends Component {
                 <p> please fill all the fields to crete a new acccount</p>
                 <div className="form-group">
                     <label> Name :</label>
-                    <input type='text' className="form-control" placeholder=" Name" value={this.state.name} onChange={this.handleChange} />
+                    <input type='text' name='name' className="form-control" placeholder=" Name" value={this.state.name} onChange={this.handleChange} />
                 </div>
                 <br />
                 <div className="form-group">
                     <label> Username :</label>
                     <div className="col-xs-4">
-                        <input type='text' className="form-control" value={this.state.username} onChange={this.handleChange} />
+                        <input type='text' name='username' className="form-control" value={this.state.username} onChange={this.handleChange} />
                     </div>
                 </div>
                 <br />
                 <div className="form-group">
                     <label> Password :</label>
-                    <input type='text' className="form-control" value={this.state.password} onChange={this.handleChange} />
+                    <input type='text' name='password'  className="form-control" value={this.state.password} onChange={this.handleChange} />
                 </div>
                 <br />
                 <div className="form-group">
                     <label> age :</label>
-                    <input type='number' className="form-control" value={this.state.age} onChange={this.handleChange} />
+                    <input type='number'name='age' className="form-control" value={this.state.age} onChange={this.handleChange} />
                 </div>
                 <br />
                 <div className="form-group">
                     <label> Gender:</label>
                     <select className='options' onClick={this.handleGenderClick}>
                         <option defaultValue> </option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
+                        <option value="male" name='male'>Male</option>
+                        <option value="female" name='female'>Female</option>
                     </select>
                 </div>
                 <br />
