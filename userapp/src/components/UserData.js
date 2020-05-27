@@ -70,7 +70,7 @@ class UserData extends Component {
                 <br />
                 <div className="form-group">
                     <label> Gender:</label>
-                    <select className='options' onClick={this.handleGenderClick}>
+                    <select className='options' name='gender' onClick={this.handleGenderClick}>
                         <option defaultValue> </option>
                         <option value="male" name='male'>Male</option>
                         <option value="female" name='female'>Female</option>
